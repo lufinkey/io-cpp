@@ -83,6 +83,20 @@
 			remoteGlobalIDString = A5E360862407189200840E28;
 			remoteInfo = "IOCpp-macOS";
 		};
+		A5E3613F24075FC100840E28 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5E360FA2407452000840E28 /* DataCpp.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A58B327F2310B0DF00E80ECB;
+			remoteInfo = "DataCpp-iOS";
+		};
+		A5E3614124075FC100840E28 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5E361062407452D00840E28 /* AsyncCpp.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A53E4E8B2304D250000BB7D8;
+			remoteInfo = "AsyncCpp-iOS";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -94,6 +108,15 @@
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 1;
+		};
+		A5E3613024075FB500840E28 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -109,6 +132,7 @@
 		A5E361062407452D00840E28 /* AsyncCpp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AsyncCpp.xcodeproj; path = "../../../async-cpp/projects/xcode/AsyncCpp.xcodeproj"; sourceTree = "<group>"; };
 		A5E3611F2407464B00840E28 /* Filesystem.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Filesystem.cpp; sourceTree = "<group>"; };
 		A5E361202407464B00840E28 /* Filesystem.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Filesystem.hpp; sourceTree = "<group>"; };
+		A5E3613224075FB500840E28 /* libIOCpp-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libIOCpp-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +150,13 @@
 				A5E3611D2407456000840E28 /* libDataCpp-macOS.a in Frameworks */,
 				A5E3611C2407456000840E28 /* libAsyncCpp-macOS.a in Frameworks */,
 				A5E361192407456000840E28 /* libIOCpp-macOS.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5E3612F24075FB500840E28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +178,7 @@
 			children = (
 				A5E360872407189200840E28 /* libIOCpp-macOS.a */,
 				A5E3609C2407192700840E28 /* IOCppTest-macOS */,
+				A5E3613224075FB500840E28 /* libIOCpp-iOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -280,6 +312,25 @@
 			productReference = A5E3609C2407192700840E28 /* IOCppTest-macOS */;
 			productType = "com.apple.product-type.tool";
 		};
+		A5E3613124075FB500840E28 /* IOCpp-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5E3613E24075FB500840E28 /* Build configuration list for PBXNativeTarget "IOCpp-iOS" */;
+			buildPhases = (
+				A5E3612E24075FB500840E28 /* Sources */,
+				A5E3612F24075FB500840E28 /* Frameworks */,
+				A5E3613024075FB500840E28 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A5E3614024075FC100840E28 /* PBXTargetDependency */,
+				A5E3614224075FC100840E28 /* PBXTargetDependency */,
+			);
+			name = "IOCpp-iOS";
+			productName = "IOCpp-iOS";
+			productReference = A5E3613224075FB500840E28 /* libIOCpp-iOS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -293,6 +344,9 @@
 						CreatedOnToolsVersion = 11.3.1;
 					};
 					A5E3609B2407192700840E28 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					A5E3613124075FB500840E28 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
 				};
@@ -322,6 +376,7 @@
 			targets = (
 				A5E360862407189200840E28 /* IOCpp-macOS */,
 				A5E3609B2407192700840E28 /* IOCppTest-macOS */,
+				A5E3613124075FB500840E28 /* IOCpp-iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -389,6 +444,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A5E3612E24075FB500840E28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -406,6 +468,16 @@
 			isa = PBXTargetDependency;
 			target = A5E360862407189200840E28 /* IOCpp-macOS */;
 			targetProxy = A5E3611A2407456000840E28 /* PBXContainerItemProxy */;
+		};
+		A5E3614024075FC100840E28 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "DataCpp-iOS";
+			targetProxy = A5E3613F24075FC100840E28 /* PBXContainerItemProxy */;
+		};
+		A5E3614224075FC100840E28 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "AsyncCpp-iOS";
+			targetProxy = A5E3614124075FC100840E28 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -581,6 +653,47 @@
 			};
 			name = Release;
 		};
+		A5E3613824075FB500840E28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RL98QGQJCL;
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../../src",
+					"$(PROJECT_DIR)/../../../data-cpp/src",
+					"$(PROJECT_DIR)/../../../async-cpp/src",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A5E3613924075FB500840E28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RL98QGQJCL;
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../../src",
+					"$(PROJECT_DIR)/../../../data-cpp/src",
+					"$(PROJECT_DIR)/../../../async-cpp/src",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -607,6 +720,15 @@
 			buildConfigurations = (
 				A5E360A12407192700840E28 /* Debug */,
 				A5E360A22407192700840E28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A5E3613E24075FB500840E28 /* Build configuration list for PBXNativeTarget "IOCpp-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5E3613824075FB500840E28 /* Debug */,
+				A5E3613924075FB500840E28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
