@@ -37,6 +37,11 @@ namespace fgl {
 		};
 		void writeFile(const String& path, const String& data, WriteFileOptions options = WriteFileOptions());
 		Promise<void> writeFileAsync(const String& path, const String& data, WriteFileOptions options = WriteFileOptions());
+	
+		void createDirectory(const String& path);
+		Promise<void> createDirectoryAsync(const String& path);
+		void createDirectories(const String& path);
+		Promise<void> createDirectoriesAsync(const String& path);
 		
 		bool remove(const String& path);
 		Promise<bool> removeAsync(const String& path);

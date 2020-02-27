@@ -15,10 +15,11 @@ namespace fgl {
 	}
 
 	Promise<bool> fs::existsAsync(const String& path) {
-		return fgl::async<bool>([=]() {
+		return async<bool>([=]() {
 			return fs::exists(path);
 		});
 	}
+
 
 
 	String fs::readFile(const String& path, ReadFileOptions options) {
@@ -39,10 +40,11 @@ namespace fgl {
 	}
 
 	Promise<String> fs::readFileAsync(const String& path, ReadFileOptions options) {
-		return fgl::async<String>([=]() {
+		return async<String>([=]() {
 			return fs::readFile(path, options);
 		});
 	}
+
 
 
 	void fs::writeFile(const String& path, const String& data, WriteFileOptions options) {
@@ -61,10 +63,33 @@ namespace fgl {
 	}
 
 	Promise<void> fs::writeFileAsync(const String& path, const String& data, WriteFileOptions options) {
-		return fgl::async<void>([=]() {
+		return async<void>([=]() {
 			return fs::writeFile(path, data, options);
 		});
 	}
+
+
+
+	void fs::createDirectory(const String& path) {
+		std::filesystem::create_directory(path.storage);
+	}
+
+	Promise<void> fs::createDirectoryAsync(const String& path) {
+		return async<void>([=]() {
+			return createDirectory(path);
+		});
+	}
+
+	void fs::createDirectories(const String& path) {
+		std::filesystem::create_directories(path.storage);
+	}
+
+	Promise<void> fs::createDirectoriesAsync(const String& path) {
+		return async<void>([=]() {
+			return createDirectories(path);
+		});
+	}
+
 
 
 	bool fs::remove(const String& path) {
@@ -72,7 +97,7 @@ namespace fgl {
 	}
 
 	Promise<bool> fs::removeAsync(const String& path) {
-		return fgl::async<bool>([=]() {
+		return async<bool>([=]() {
 			return fs::remove(path);
 		});
 	}
@@ -82,7 +107,7 @@ namespace fgl {
 	}
 
 	Promise<uintmax_t> fs::removeAllAsync(const String& path) {
-		return fgl::async<uintmax_t>([=]() {
+		return async<uintmax_t>([=]() {
 			return fs::removeAll(path);
 		});
 	}
