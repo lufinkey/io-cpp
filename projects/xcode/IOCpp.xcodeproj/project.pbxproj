@@ -15,6 +15,8 @@
 		A5E361192407456000840E28 /* libIOCpp-macOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E360872407189200840E28 /* libIOCpp-macOS.a */; };
 		A5E3611C2407456000840E28 /* libAsyncCpp-macOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E3610E2407452D00840E28 /* libAsyncCpp-macOS.a */; };
 		A5E3611D2407456000840E28 /* libDataCpp-macOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E361012407452000840E28 /* libDataCpp-macOS.a */; };
+		A5E361212407464B00840E28 /* Filesystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5E3611F2407464B00840E28 /* Filesystem.cpp */; };
+		A5E361222407464B00840E28 /* Filesystem.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A5E361202407464B00840E28 /* Filesystem.hpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +107,8 @@
 		A5E360BD24071B5400840E28 /* Console.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Console.hpp; sourceTree = "<group>"; };
 		A5E360FA2407452000840E28 /* DataCpp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DataCpp.xcodeproj; path = "../../../data-cpp/projects/xcode/DataCpp.xcodeproj"; sourceTree = "<group>"; };
 		A5E361062407452D00840E28 /* AsyncCpp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AsyncCpp.xcodeproj; path = "../../../async-cpp/projects/xcode/AsyncCpp.xcodeproj"; sourceTree = "<group>"; };
+		A5E3611F2407464B00840E28 /* Filesystem.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Filesystem.cpp; sourceTree = "<group>"; };
+		A5E361202407464B00840E28 /* Filesystem.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Filesystem.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,7 +165,6 @@
 			isa = PBXGroup;
 			children = (
 				A5E36068240717AB00840E28 /* io.hpp */,
-				A5E3605F240716E900840E28 /* filesystem */,
 				A5E3605E240716D000840E28 /* io */,
 			);
 			path = fgl;
@@ -173,15 +176,10 @@
 				A5E360672407179E00840E28 /* Common.hpp */,
 				A5E360BD24071B5400840E28 /* Console.hpp */,
 				A5E360BC24071B5400840E28 /* Console.cpp */,
+				A5E361202407464B00840E28 /* Filesystem.hpp */,
+				A5E3611F2407464B00840E28 /* Filesystem.cpp */,
 			);
 			path = io;
-			sourceTree = "<group>";
-		};
-		A5E3605F240716E900840E28 /* filesystem */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = filesystem;
 			sourceTree = "<group>";
 		};
 		A5E360612407172000840E28 /* test */ = {
@@ -236,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5E360BF24071B5400840E28 /* Console.hpp in Headers */,
+				A5E361222407464B00840E28 /* Filesystem.hpp in Headers */,
 				A5E3608B2407189A00840E28 /* io.hpp in Headers */,
 				A5E3608C2407189D00840E28 /* Common.hpp in Headers */,
 			);
@@ -377,6 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5E361212407464B00840E28 /* Filesystem.cpp in Sources */,
 				A5E360BE24071B5400840E28 /* Console.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
