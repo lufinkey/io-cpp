@@ -7,3 +7,5 @@
 //
 
 #pragma once
+
+#include <fgl/io/Console.hpp>

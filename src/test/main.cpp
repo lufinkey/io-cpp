@@ -8,6 +8,9 @@
 
 #include <fgl/io.hpp>
 
+using namespace fgl;
+
 int main(int argc, const char * argv[]) {
+	console::log("hello world");
 	return 0;
 }
