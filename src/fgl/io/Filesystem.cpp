@@ -9,6 +9,18 @@
 #include "Filesystem.hpp"
 
 namespace fgl {
+	bool fs::exists(const String& path) {
+		std::error_code error;
+		return std::filesystem::exists(path.storage, error);
+	}
+
+	Promise<bool> fs::existsAsync(const String& path) {
+		return fgl::async<bool>([=]() {
+			return fs::exists(path);
+		});
+	}
+
+
 	String fs::readFile(const String& path, ReadFileOptions options) {
 		std::ifstream file;
 		String data;
@@ -31,6 +43,7 @@ namespace fgl {
 			return fs::readFile(path, options);
 		});
 	}
+
 
 	void fs::writeFile(const String& path, const String& data, WriteFileOptions options) {
 		std::ofstream file;
@@ -55,7 +68,7 @@ namespace fgl {
 
 
 	bool fs::remove(const String& path) {
-		return std::filesystem::remove(path.c_str());
+		return std::filesystem::remove(path.storage);
 	}
 
 	Promise<bool> fs::removeAsync(const String& path) {
@@ -65,7 +78,7 @@ namespace fgl {
 	}
 
 	uintmax_t fs::removeAll(const String& path) {
-		return std::filesystem::remove_all(path.c_str());
+		return std::filesystem::remove_all(path.storage);
 	}
 
 	Promise<uintmax_t> fs::removeAllAsync(const String& path) {

@@ -23,6 +23,9 @@ namespace fgl {
 			static const auto trunc = std::ios::trunc;
 		};
 	
+		bool exists(const String& path);
+		Promise<bool> existsAsync(const String& path);
+	
 		struct ReadFileOptions {
 			std::ios_base::openmode mode = OpenMode::in;
 		};
