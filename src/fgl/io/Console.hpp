@@ -21,32 +21,32 @@ namespace fgl {
 	
 		template<typename... T>
 		void log(T... arg) {
-			log(String::join(LinkedList<String>{ stringify<T>(arg)... }, " "));
+			log(String::join({ stringify<T>(arg)... }, " "));
 		}
 	
 		template<typename... T>
 		void write(T... arg) {
-			write(String::join(LinkedList<String>{ stringify<T>(arg)... }));
+			write(String::join({ stringify<T>(arg)... }));
 		}
 	
 		template<typename... T>
 		void writeLine(T... arg) {
-			writeLine(String::join(LinkedList<String>{ stringify<T>(arg)... }));
+			writeLine(String::join({ stringify<T>(arg)... }));
 		}
 	
 		template<typename... T>
 		void error(T... arg) {
-			error(String::join(LinkedList<String>{ stringify<T>(arg)... }, " "));
+			error(String::join({ stringify<T>(arg)... }, " "));
 		}
 	
 		template<typename... T>
 		void writeErr(T... arg) {
-			writeErr(String::join(LinkedList<String>{ stringify<T>(arg)... }));
+			writeErr(String::join({ stringify<T>(arg)... }));
 		}
 	
 		template<typename... T>
 		void writeErrLine(T... arg) {
-			writeErrLine(String::join(LinkedList<String>{ stringify<T>(arg)... }));
+			writeErrLine(String::join({ stringify<T>(arg)... }));
 		}
 	}
 }
