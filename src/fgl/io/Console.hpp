@@ -21,7 +21,7 @@ namespace fgl {
 	
 		template<typename... T>
 		void log(T... arg) {
-			log(String::join({ stringify<T>(arg)... }, " "));
+			log(String::join({ stringify<T>(arg)... }));
 		}
 	
 		template<typename... T>
@@ -36,7 +36,7 @@ namespace fgl {
 	
 		template<typename... T>
 		void error(T... arg) {
-			error(String::join({ stringify<T>(arg)... }, " "));
+			error(String::join({ stringify<T>(arg)... }));
 		}
 	
 		template<typename... T>

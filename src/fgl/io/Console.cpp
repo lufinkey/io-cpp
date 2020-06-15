@@ -10,8 +10,20 @@
 #include <iostream>
 
 namespace fgl {
+	namespace console {
+		const char* TIMESTAMP_FORMAT = "%Y-%m-%d %H:%M:%S %z";
+		
+		String getLogPrefix() {
+			char timestamp[255];
+			time_t rawTime = time(NULL);
+			struct tm* timeVal = localtime(&rawTime);
+			strftime(timestamp, sizeof(timestamp), TIMESTAMP_FORMAT, timeVal);
+			return timestamp;
+		}
+	}
+	
 	void console::log(const String& output) {
-		writeLine(output);
+		writeLine("[", getLogPrefix(), "]: ", output);
 	}
 
 	void console::write(const String& output) {
@@ -23,7 +35,7 @@ namespace fgl {
 	}
 
 	void console::error(const String& output) {
-		writeErrLine(output);
+		writeErrLine("[", getLogPrefix(), "]: ", output);
 	}
 
 	void console::writeErr(const String& output) {
