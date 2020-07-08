@@ -601,6 +601,7 @@
 					"$(PROJECT_DIR)/../../src",
 					"$(PROJECT_DIR)/../../../data-cpp/src",
 					"$(PROJECT_DIR)/../../../async-cpp/src",
+					"$(PROJECT_DIR)/../../../dtl",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -617,6 +618,7 @@
 					"$(PROJECT_DIR)/../../src",
 					"$(PROJECT_DIR)/../../../data-cpp/src",
 					"$(PROJECT_DIR)/../../../async-cpp/src",
+					"$(PROJECT_DIR)/../../../dtl",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -663,6 +665,7 @@
 					"$(PROJECT_DIR)/../../src",
 					"$(PROJECT_DIR)/../../../data-cpp/src",
 					"$(PROJECT_DIR)/../../../async-cpp/src",
+					"$(PROJECT_DIR)/../../../dtl",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				OTHER_LDFLAGS = "-ObjC";
@@ -683,6 +686,7 @@
 					"$(PROJECT_DIR)/../../src",
 					"$(PROJECT_DIR)/../../../data-cpp/src",
 					"$(PROJECT_DIR)/../../../async-cpp/src",
+					"$(PROJECT_DIR)/../../../dtl",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				OTHER_LDFLAGS = "-ObjC";

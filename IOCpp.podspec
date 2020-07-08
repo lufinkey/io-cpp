@@ -40,7 +40,12 @@ Pod::Spec.new do |s|
 	s.public_header_files = 'src/fgl/**/*.hpp'
 	s.header_mappings_dir = 'src/fgl'
 	s.pod_target_xcconfig = {
-		'HEADER_SEARCH_PATHS' => '"$(PODS_ROOT)/IOCpp/src" "$(PODS_ROOT)/DataCpp/src" "$(PODS_ROOT)/AsyncCpp/src"',
+		'HEADER_SEARCH_PATHS' => [
+			"$(PODS_ROOT)/IOCpp/src",
+			"$(PODS_ROOT)/DataCpp/src",
+			"$(PODS_ROOT)/AsyncCpp/src",
+			"$(PODS_ROOT)/dtl"
+		],
 		'CLANG_CXX_LANGUAGE_STANDARD' => 'gnu++17'
 	}
 	s.user_target_xcconfig = {
