@@ -58,3 +58,6 @@ local.properties
 buck-out/
 \.buckd/
 *.keystore
+
+# External Projects
+/external/filesystem

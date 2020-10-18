@@ -7,11 +7,18 @@
 //
 
 #include "Filesystem.hpp"
+#ifdef __ANDROID__
+	#include <ghc/filesystem.hpp>
+	namespace stdfs = ghc::filesystem;
+#else
+	#include <filesystem>
+	namespace stdfs = std::filesystem;
+#endif
 
 namespace fgl {
 	bool fs::exists(const String& path) {
 		std::error_code error;
-		return std::filesystem::exists(path.storage, error);
+		return stdfs::exists(path.storage, error);
 	}
 
 	Promise<bool> fs::existsAsync(const String& path) {
@@ -71,7 +78,7 @@ namespace fgl {
 
 
 	void fs::createDirectory(const String& path) {
-		std::filesystem::create_directory(path.storage);
+		stdfs::create_directory(path.storage);
 	}
 
 	Promise<void> fs::createDirectoryAsync(const String& path) {
@@ -81,7 +88,7 @@ namespace fgl {
 	}
 
 	void fs::createDirectories(const String& path) {
-		std::filesystem::create_directories(path.storage);
+		stdfs::create_directories(path.storage);
 	}
 
 	Promise<void> fs::createDirectoriesAsync(const String& path) {
@@ -93,7 +100,7 @@ namespace fgl {
 
 
 	bool fs::remove(const String& path) {
-		return std::filesystem::remove(path.storage);
+		return stdfs::remove(path.storage);
 	}
 
 	Promise<bool> fs::removeAsync(const String& path) {
@@ -103,7 +110,7 @@ namespace fgl {
 	}
 
 	uintmax_t fs::removeAll(const String& path) {
-		return std::filesystem::remove_all(path.storage);
+		return stdfs::remove_all(path.storage);
 	}
 
 	Promise<uintmax_t> fs::removeAllAsync(const String& path) {

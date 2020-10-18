@@ -9,8 +9,8 @@
 #pragma once
 
 #include <fgl/io/Common.hpp>
-#include <filesystem>
 #include <fstream>
+#include <ios>
 
 namespace fgl {
 	namespace fs {
@@ -22,7 +22,7 @@ namespace fgl {
 			static const auto out = std::ios::out;
 			static const auto trunc = std::ios::trunc;
 		};
-	
+
 		bool exists(const String& path);
 		Promise<bool> existsAsync(const String& path);
 	
