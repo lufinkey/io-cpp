@@ -14,6 +14,7 @@ set( IOCPP_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/../../../../../.." )
 
 add_subdirectory("${IOCPP_ROOT}/../data-cpp/projects/android-studio/libdatacpp/src/main/cpp" "${CMAKE_BINARY_DIR}/data-cpp")
 add_subdirectory("${IOCPP_ROOT}/../async-cpp/projects/android-studio/libasynccpp/src/main/cpp" "${CMAKE_BINARY_DIR}/async-cpp")
+add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/../../../../libiocpp/src/main/cpp" "${CMAKE_BINARY_DIR}/io-cpp")
 
 add_library( # Sets the name of the library.
 		native-lib
