@@ -47,5 +47,7 @@ namespace fgl {
 		Promise<bool> removeAsync(const String& path);
 		uintmax_t removeAll(const String& path);
 		Promise<uintmax_t> removeAllAsync(const String& path);
+	
+		String temporaryDirectory();
 	}
 }
