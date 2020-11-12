@@ -122,6 +122,6 @@ namespace fgl {
 
 
 	String fs::temporaryDirectory() {
-		return stdfs::temp_directory_path();
+		return stdfs::temp_directory_path().string();
 	}
 }
