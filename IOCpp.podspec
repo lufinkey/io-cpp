@@ -47,7 +47,7 @@ Pod::Spec.new do |s|
 			"$(PODS_ROOT)/dtl"
 		],
 		'CLANG_CXX_LANGUAGE_STANDARD' => 'gnu++17',
-		'GCC_OPTIMIZATION_LEVEL' => 's'
+		'GCC_OPTIMIZATION_LEVEL[config=Release]' => 's'
 	}
 	s.user_target_xcconfig = {
 		'FRAMEWORK_SEARCH_PATHS' => "${PODS_ROOT}/IOCpp/src"
