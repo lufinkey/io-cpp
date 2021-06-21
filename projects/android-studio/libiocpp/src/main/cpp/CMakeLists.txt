@@ -1,5 +1,3 @@
-# For more information about using CMake with Android Studio, read the
-# documentation: https://d.android.com/studio/projects/add-native-code.html
 
 cmake_minimum_required(VERSION 3.4.1)
 set( CMAKE_CXX_STANDARD 17 )
@@ -9,13 +7,7 @@ set( IOCPP_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/../../../../../.." )
 
 execute_process(COMMAND "${IOCPP_ROOT}/tools/fetch_android_dependencies.sh")
 
-include_directories(
-		"${CMAKE_CURRENT_SOURCE_DIR}"
-		"${IOCPP_ROOT}/../data-cpp/src"
-		"${IOCPP_ROOT}/../async-cpp/src"
-		"${IOCPP_ROOT}/../dtl" )
-
-file(GLOB_RECURSE IOCPP_SOURCES ../../../../../../src/fgl/*.cpp)
+file(GLOB_RECURSE IOCPP_SOURCES "${IOCPP_ROOT}/src/fgl/*.cpp")
 
 add_library(IOCpp SHARED
 		IOCpp_android.cpp
@@ -24,7 +16,10 @@ add_library(IOCpp SHARED
 target_include_directories(
 		IOCpp
 		PUBLIC
-		"${IOCPP_ROOT}/src")
+		"${IOCPP_ROOT}/src"
+		"${IOCPP_ROOT}/../data-cpp/src"
+		"${IOCPP_ROOT}/../async-cpp/src"
+		"${IOCPP_ROOT}/../dtl")
 
 target_include_directories(
 		IOCpp
