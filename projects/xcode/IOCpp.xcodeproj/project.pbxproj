@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5DF8221268D15B100148A06 /* IOCppTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5DF821F268D15B100148A06 /* IOCppTests.cpp */; };
 		A5E3608B2407189A00840E28 /* io.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A5E36068240717AB00840E28 /* io.hpp */; };
 		A5E3608C2407189D00840E28 /* Common.hpp in Headers */ = {isa = PBXBuildFile; fileRef = A5E360672407179E00840E28 /* Common.hpp */; };
 		A5E360BE24071B5400840E28 /* Console.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5E360BC24071B5400840E28 /* Console.cpp */; };
@@ -121,6 +122,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A5DF821F268D15B100148A06 /* IOCppTests.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = IOCppTests.cpp; sourceTree = "<group>"; };
+		A5DF8220268D15B100148A06 /* IOCppTests.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = IOCppTests.hpp; sourceTree = "<group>"; };
 		A5E360622407176300840E28 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		A5E360672407179E00840E28 /* Common.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Common.hpp; sourceTree = "<group>"; };
 		A5E36068240717AB00840E28 /* io.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = io.hpp; sourceTree = "<group>"; };
@@ -217,6 +220,8 @@
 		A5E360612407172000840E28 /* test */ = {
 			isa = PBXGroup;
 			children = (
+				A5DF8220268D15B100148A06 /* IOCppTests.hpp */,
+				A5DF821F268D15B100148A06 /* IOCppTests.cpp */,
 				A5E360622407176300840E28 /* main.cpp */,
 			);
 			path = test;
@@ -441,6 +446,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5E360E02407448E00840E28 /* main.cpp in Sources */,
+				A5DF8221268D15B100148A06 /* IOCppTests.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

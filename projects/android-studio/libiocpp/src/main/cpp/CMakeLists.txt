@@ -1,9 +1,12 @@
 
 cmake_minimum_required(VERSION 3.4.1)
 set( CMAKE_CXX_STANDARD 17 )
-set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}" )
 
 set( IOCPP_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/../../../../../.." )
+set( ASYNCCPP_ROOT "${IOCPP_ROOT}/../async-cpp" )
+set( ASYNCCPP_LIB_DIR "${ASYNCCPP_ROOT}/projects/android-studio/libasynccpp/build/intermediates/cmake/${CMAKE_BUILD_TYPE}/obj/${ANDROID_ABI}" )
+set( DATACPP_ROOT "${IOCPP_ROOT}/../data-cpp" )
+set( DATACPP_LIB_DIR "${DATACPP_ROOT}/projects/android-studio/libdatacpp/build/intermediates/cmake/${CMAKE_BUILD_TYPE}/obj/${ANDROID_ABI}" )
 
 execute_process(COMMAND "${IOCPP_ROOT}/tools/fetch_android_dependencies.sh")
 
@@ -30,6 +33,6 @@ find_library(log-lib log)
 
 target_link_libraries(
 		IOCpp
-		DataCpp
-		AsyncCpp
+		"${DATACPP_LIB_DIR}/libDataCpp.so"
+		"${ASYNCCPP_LIB_DIR}/libAsyncCpp.so"
 		${log-lib})

@@ -6,11 +6,11 @@
 //  Copyright © 2020 Luis Finke. All rights reserved.
 //
 
-#include <fgl/io.hpp>
+#include "IOCppTests.hpp"
 
 using namespace fgl;
 
 int main(int argc, const char * argv[]) {
-	console::log("hello world");
+	fgl_io_cpp_tests::runTests();
 	return 0;
 }

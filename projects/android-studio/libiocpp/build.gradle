@@ -14,10 +14,14 @@ android {
 
 		externalNativeBuild {
 			cmake {
-				targets 'IOCpp'
 				cppFlags "-std=c++17"
-				arguments "-DANDROID_STL=c++_shared"
 			}
+		}
+	}
+
+	sourceSets {
+		main {
+			java.srcDirs += "../../../src/fgl"
 		}
 	}
 

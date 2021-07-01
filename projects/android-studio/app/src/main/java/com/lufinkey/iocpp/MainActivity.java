@@ -5,6 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
+	static {
+		com.lufinkey.libdatacpp.DataCpp.loadLibraries();
+		com.lufinkey.libasynccpp.AsyncCpp.loadLibraries();
+		com.lufinkey.libiocpp.IOCpp.loadLibraries();
+		System.loadLibrary("native-lib");
+	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
