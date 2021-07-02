@@ -1,4 +1,4 @@
-package com.lufinkey.libiocpp;
+package com.lufinkey;
 
 public class IOCpp {
 	static {
@@ -6,8 +6,8 @@ public class IOCpp {
 	}
 
 	public static void loadLibraries() {
-		com.lufinkey.libdatacpp.DataCpp.loadLibraries();
-		com.lufinkey.libasynccpp.AsyncCpp.loadLibraries();
+		com.lufinkey.DataCpp.loadLibraries();
+		com.lufinkey.AsyncCpp.loadLibraries();
 		System.loadLibrary("IOCpp");
 	}
 }
