@@ -641,6 +641,7 @@
 					"$(PROJECT_DIR)/../../src",
 					"$(PROJECT_DIR)/../../../data-cpp/src",
 					"$(PROJECT_DIR)/../../../async-cpp/src",
+					"$(PROJECT_DIR)/../../../dtl",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -656,6 +657,7 @@
 					"$(PROJECT_DIR)/../../src",
 					"$(PROJECT_DIR)/../../../data-cpp/src",
 					"$(PROJECT_DIR)/../../../async-cpp/src",
+					"$(PROJECT_DIR)/../../../dtl",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
