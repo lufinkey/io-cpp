@@ -34,7 +34,7 @@ namespace fgl {
 		String data;
 		try {
 			file.exceptions(std::ios::failbit | std::ios::badbit);
-			file.open(path.c_str(), options.mode);
+			file.open(path, options.mode);
 			data = String(std::istreambuf_iterator<char>(file), std::istreambuf_iterator<char>());
 			file.close();
 		} catch(...) {
@@ -58,7 +58,7 @@ namespace fgl {
 		std::ofstream file;
 		try {
 			file.exceptions(std::ios::failbit | std::ios::badbit);
-			file.open(path.c_str(), options.mode);
+			file.open(path, options.mode);
 			file << data;
 			file.close();
 		} catch(...) {
