@@ -1,7 +1,7 @@
 
+cmake_minimum_required(VERSION 3.18.1)
 project(IOCpp)
-cmake_minimum_required(VERSION 3.4.1)
-set( CMAKE_CXX_STANDARD 17 )
+set( CMAKE_CXX_STANDARD 20 )
 
 set( IOCPP_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/../../../../../.." )
 set( ASYNCCPP_ROOT "${IOCPP_ROOT}/../async-cpp" )
@@ -20,14 +20,14 @@ add_library(IOCpp SHARED
 target_include_directories(
 		IOCpp
 		PUBLIC
-		"${IOCPP_ROOT}/src"
-		"${IOCPP_ROOT}/../data-cpp/src"
-		"${IOCPP_ROOT}/../async-cpp/src"
-		"${IOCPP_ROOT}/../dtl")
+		"${IOCPP_ROOT}/src")
 
 target_include_directories(
 		IOCpp
 		PRIVATE
+		"${IOCPP_ROOT}/../data-cpp/src"
+		"${IOCPP_ROOT}/../async-cpp/src"
+		"${IOCPP_ROOT}/../dtl"
 		"${IOCPP_ROOT}/external/filesystem/include")
 
 find_library(log-lib log)

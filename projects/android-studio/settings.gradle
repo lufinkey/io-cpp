@@ -1,6 +1,7 @@
-include ':app', ':libiocpp'
+rootProject.name='IOCpp'
+include ':app'
 include ':libdatacpp'
 project(':libdatacpp').projectDir=new File('../../../data-cpp/projects/android-studio/libdatacpp')
 include ':libasynccpp'
 project(':libasynccpp').projectDir=new File('../../../async-cpp/projects/android-studio/libasynccpp')
-rootProject.name='IOCpp'
+include ':libiocpp'

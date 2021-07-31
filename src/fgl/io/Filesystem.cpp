@@ -7,22 +7,18 @@
 //
 
 #include "Filesystem.hpp"
-#ifdef __ANDROID__
-	#include <ghc/filesystem.hpp>
-	namespace stdfs = ghc::filesystem;
-#else
-	#include <filesystem>
-	namespace stdfs = std::filesystem;
-#endif
+#include <filesystem>
 
 namespace fgl {
+	using stdfs = std::filesystem;
+
 	bool fs::exists(const String& path) {
 		std::error_code error;
-		return stdfs::exists(path.storage, error);
+		return stdfs::exists(path, error);
 	}
 
 	Promise<bool> fs::existsAsync(const String& path) {
-		return async<bool>([=]() {
+		return promiseThread([=]() {
 			return fs::exists(path);
 		});
 	}
@@ -47,7 +43,7 @@ namespace fgl {
 	}
 
 	Promise<String> fs::readFileAsync(const String& path, ReadFileOptions options) {
-		return async<String>([=]() {
+		return promiseThread([=]() {
 			return fs::readFile(path, options);
 		});
 	}
@@ -70,7 +66,7 @@ namespace fgl {
 	}
 
 	Promise<void> fs::writeFileAsync(const String& path, const String& data, WriteFileOptions options) {
-		return async<void>([=]() {
+		return promiseThread([=]() {
 			return fs::writeFile(path, data, options);
 		});
 	}
@@ -78,21 +74,21 @@ namespace fgl {
 
 
 	void fs::createDirectory(const String& path) {
-		stdfs::create_directory(path.storage);
+		stdfs::create_directory(path);
 	}
 
 	Promise<void> fs::createDirectoryAsync(const String& path) {
-		return async<void>([=]() {
+		return promiseThread([=]() {
 			return createDirectory(path);
 		});
 	}
 
 	void fs::createDirectories(const String& path) {
-		stdfs::create_directories(path.storage);
+		stdfs::create_directories(path);
 	}
 
 	Promise<void> fs::createDirectoriesAsync(const String& path) {
-		return async<void>([=]() {
+		return promiseThread([=]() {
 			return createDirectories(path);
 		});
 	}
@@ -100,21 +96,21 @@ namespace fgl {
 
 
 	bool fs::remove(const String& path) {
-		return stdfs::remove(path.storage);
+		return stdfs::remove(path);
 	}
 
 	Promise<bool> fs::removeAsync(const String& path) {
-		return async<bool>([=]() {
+		return promiseThread([=]() {
 			return fs::remove(path);
 		});
 	}
 
 	uintmax_t fs::removeAll(const String& path) {
-		return stdfs::remove_all(path.storage);
+		return stdfs::remove_all(path);
 	}
 
 	Promise<uintmax_t> fs::removeAllAsync(const String& path) {
-		return async<uintmax_t>([=]() {
+		return promiseThread([=]() {
 			return fs::removeAll(path);
 		});
 	}
